@@ -42,10 +42,7 @@ const ctrl = __importStar(require("./user.controller"));
 const auth_middleware_1 = require("../middlewares/auth.middleware");
 const role_middleware_1 = require("../middlewares/role.middleware");
 const router = express_1.default.Router();
-// 🔴 Admin only
 router.get("/", auth_middleware_1.authMiddleware, role_middleware_1.requireAdmin, ctrl.getUsers);
-// 🔴 Admin OR own
 router.put("/:userId", auth_middleware_1.authMiddleware, ctrl.updateUser);
-// 🔴 Admin only
 router.delete("/:userId", auth_middleware_1.authMiddleware, role_middleware_1.requireAdmin, ctrl.deleteUser);
 exports.userRoutes = router;

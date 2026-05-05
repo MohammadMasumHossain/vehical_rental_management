@@ -8,6 +8,9 @@ const pg_1 = require("pg");
 const _1 = __importDefault(require("."));
 exports.pool = new pg_1.Pool({
     connectionString: `${_1.default.connection_str}`,
+    ssl: {
+        rejectUnauthorized: false,
+    },
 });
 const initDB = async () => {
     await exports.pool.query(`

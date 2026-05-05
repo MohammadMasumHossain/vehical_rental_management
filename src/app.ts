@@ -13,7 +13,7 @@ import { bookingRoute } from "./modules/bookings/booking.routes";
 dotenv.config({ path: path.join(process.cwd(), ".env") });
 
 const app = express();
-initDB();
+// initDB();
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {

@@ -34,7 +34,6 @@ const signinUser = async (payload) => {
     if (!isMatch) {
         throw new Error("Invalid credentials");
     }
-    // 🔐 JWT payload
     const token = jsonwebtoken_1.default.sign({
         id: user.id,
         role: user.role,

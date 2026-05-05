@@ -39,7 +39,6 @@ export const signinUser = async (payload: any) => {
     throw new Error("Invalid credentials");
   }
 
-  // 🔐 JWT payload
   const token = jwt.sign(
     {
       id: user.id,

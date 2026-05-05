@@ -6,14 +6,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const path_1 = __importDefault(require("path"));
-const db_1 = __importDefault(require("./config/db"));
 const auth_routes_1 = __importDefault(require("./modules/auth/auth.routes"));
 const user_routes_1 = require("./modules/users/user.routes");
 const vehicle_routes_1 = require("./modules/vehicles/vehicle.routes");
 const booking_routes_1 = require("./modules/bookings/booking.routes");
 dotenv_1.default.config({ path: path_1.default.join(process.cwd(), ".env") });
 const app = (0, express_1.default)();
-(0, db_1.default)();
+// initDB();
 app.use(express_1.default.json());
 app.get("/", (req, res) => {
     res.send("Hello! welcome to rental vehicel systems!");
